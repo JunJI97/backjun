@@ -1,0 +1,43 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    static int[] p;
+    static int N;
+    static int[] nums;
+    static boolean[] visited;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        p = new int[N];
+        visited=new boolean[N];
+
+        for (int i = 0; i < N; i++) {
+            p[i] = i+1;
+        }
+
+        nums=new int[N];
+        visited=new boolean[N];
+        perm(0);
+    }
+
+    static void perm(int cnt) {
+        if(cnt==N) {
+            for (int i : nums) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+            return;
+        }
+
+        for (int i=0; i < N; i++) {
+            if(visited[i]) continue;
+            visited[i] = true;
+            nums[cnt]=p[i];
+            perm(cnt+1);
+            nums[cnt] = 0;
+            visited[i] = false;
+        }
+    }
+}
