@@ -1,3 +1,5 @@
+// 슬라이스 윈도우 기법을 이용한 풀이
+// 정석 투포인터 방법도 알아보기
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
